@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistrationApplication.Pages.HomePage"
+             Title="Home"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bcolor">#7a7f8b</Color>
+            <Color x:Key="tcolor">#000000</Color>
+            <Color x:Key="pcolor">#7a7f8b</Color>
+            <x:Double x:Key="fontsize">14</x:Double>
+            <x:Double x:Key="hfontsize">18</x:Double>
+            <x:Double x:Key="ifontsize">12</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="40,*"
+          ColumnDefinitions="*"
+          RowSpacing="10"
+          >
+        <VerticalStackLayout >
+            <Label Margin="90,20,0,0"
+               x:Name="Logoheading" 
+               Text="Demo Company(TZ)"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+            <Line Margin="0,3,0,0"
+              HeightRequest="1"
+              BackgroundColor="{DynamicResource bcolor}"
+              />
+        </VerticalStackLayout>
+
+        <ScrollView Padding="15" Orientation="Vertical" Grid.Row="1">
+
+        <VerticalStackLayout>
+            
+            <Label x:Name="businessheading" 
+               Text="Business"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+            <Label x:Name="businessIntroduction" 
+               Text="Run your business with a variety of functional apps"
+               FontSize="{DynamicResource fontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource pcolor}"/>
+
+            <!--This is the first line of images in business sector-->
+            <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,15,0,0"
+                    >
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Quotation" 
+                         Source="quotation.png" 
+                         Clicked="quotation_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Quotations" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Invoice" 
+                         Source="invoices.png" 
+                         Clicked="Invoice_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Invoices" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Expenses" 
+                         Source="expenses.png" 
+                         Clicked="Expenses_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Expenses" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Deposits" 
+                         Source="deposits.png" 
+                         Clicked="Deposits_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Deposits" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+            </FlexLayout>
+
+            <!--This is the second line of images in business sector-->
+            <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,25,0,0"
+                    >
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Purchase_Orders" 
+                         Source="purchase_orders.png" 
+                         Clicked="Purchase_Orders_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label 
+                            Text="Purchase" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    <Label Margin="7,-4,0,0"
+                            Text="Orders" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Bills" 
+                         Source="bills.png" 
+                         Clicked="Bills_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Margin="20,0,0,0"
+                            Text="Bills" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Products" 
+                         Source="products.png" 
+                         Clicked="Products_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Products" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Contacts" 
+                         Source="contacts.png" 
+                         Clicked="Products_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Contacts" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+            </FlexLayout>
+
+            <!--This is the third line of images in business sector-->
+            <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,21,0,0"
+                    >
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Pick" 
+                         Source="pick.png" 
+                         Clicked="Pick_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Margin="20,0,0,0"
+                            Text="Pick" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="CRM" 
+                         Source="crm.png" 
+                         Clicked="CRM_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Margin="15,0,0,0"
+                            Text="CRM" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="documentdesigner" 
+                         Source="document_designer.png" 
+                         Clicked="Expenses_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Document" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    <Label  Margin="4,-3,0,0"
+                            Text="Designer" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="documentscanner" 
+                         Source="document_scanner.png" 
+                         Clicked="Deposits_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Document" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    <Label Margin="7,-4,0,0"
+                            Text="Scanner" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+            </FlexLayout>
+
+            <!--This is the fourth line of images in business sector-->
+            <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,19,0,0"
+                    >
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name=" Payroll" 
+                         Source="payroll.png" 
+                         Clicked="Payroll_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Margin="10,0,0,0"
+                            Text="Payroll" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="eLeave" 
+                         Source="eleave.png" 
+                         Clicked="eLeave_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Margin="10,0,0,0"
+                            Text="eLeave" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="expenseclaim" 
+                         Source="ezpenseclaim.png" 
+                         Clicked="Expenses_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label  Margin="5,0,0,0" 
+                            Text="Expense" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <ImageButton x:Name="Warehouse" 
+                         Source="warehouse.png" 
+                         Clicked="Warehouse_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                    <Label Text="Warehouse" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                </VerticalStackLayout>
+            </FlexLayout>
+
+            <!--This is the beginning of the Accounting Sector which contains the header-->
+
+            <VerticalStackLayout Margin="0,20,0,0" >
+                <Label x:Name="accountheading" 
+               Text="Accounting"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+                <Label x:Name="accountIntroduction" 
+               Text="Track business with various financial reports"
+               FontSize="{DynamicResource fontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource pcolor}"/>
+
+                <!--This is the first line of images in Accounting sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,15,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="chart_accounts" 
+                         Source="chartaccounts.png" 
+                         Clicked="chart_accounts_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Chart of" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                           HorizontalOptions="Center"/>
+                        <Label Text="Accounts" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                           HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="journal" 
+                         Source="journalentries.png" 
+                         Clicked="journal_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Journal" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                           HorizontalOptions="Center"/>
+                        <Label Text="Entries" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                           HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="profit_loss" 
+                         Source="expenses.png" 
+                         Clicked="profit_loss_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Profit and" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Loss" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="balancesheet" 
+                         Source="deposits.png" 
+                         Clicked="balancesheet_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Balance" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                           HorizontalOptions="Center"/>
+                        <Label Text="Sheet" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+
+                <!--This is the second line of images in Accounting sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,25,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="trialbalance" 
+                         Source="trial_balance.png" 
+                         Clicked="trialbalance_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label 
+                            Text="Trial" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Margin="0,-4,0,0"
+                            Text="Balance" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="openbalance" 
+                         Source="bills.png" 
+                         Clicked="Bills_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Margin="20,0,0,0"
+                            Text="Bills" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="debitnotes" 
+                         Source="debitnotes.png" 
+                         Clicked="debitnotes_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Debit Notes" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="creditnotes" 
+                         Source="quotation.png" 
+                         Clicked="creditnotes_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Credit" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Notes" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+
+                <!--This is the third line of images in Accounting sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,21,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="bank" 
+                         Source="warehouse.png" 
+                         Clicked="bank_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Margin="20,0,0,0"
+                            Text="Bank" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+
+                </FlexLayout>
+
+
+
+            </VerticalStackLayout>
+            <!--This is the beginning of the Apps Sector which contains the header-->
+
+            <VerticalStackLayout Margin="0,20,0,0" >
+                <Label x:Name="appheading" 
+               Text="Apps"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+                <Label x:Name="appIntroduction" 
+               Text="Explore apps in VisualApps for additional functions"
+               FontSize="{DynamicResource fontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource pcolor}"/>
+
+                <!--This is the only line of images in Apps sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,15,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="stock_management" 
+                         Source="stock_management.png" 
+                         Clicked="stock_management_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Stock" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Management" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="shipment" 
+                         Source="shipment_tracking.png" 
+                         Clicked="shipment_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Shipment" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Tracking" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="fixedassets" 
+                         Source="fixed_assets.png" 
+                         Clicked="profit_loss_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Fixed" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                        <Label Text="Assets" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+
+                </FlexLayout>
+
+
+
+
+            </VerticalStackLayout>
+
+            <!--This is the beginning of the Organization Administration Sector which contains the header-->
+
+            <VerticalStackLayout Margin="0,20,0,0" >
+                <Label x:Name="orgAdministration" 
+               Text="Organization Administration"
+               FontSize="{DynamicResource hfontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource tcolor}"/>
+                <Label x:Name="orgAdministrationIntroduction" 
+               Text="Track business with various financial reports"
+               FontSize="{DynamicResource fontsize}"
+               FontAttributes="Bold"
+               TextColor="{DynamicResource pcolor}"/>
+
+                <!--This is the only line of images in Organisation Administration sector-->
+                <FlexLayout Direction="Row" 
+                    JustifyContent="SpaceBetween" 
+                    Wrap="NoWrap"
+                    Margin="0,15,0,0"
+                    >
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="org_Info" 
+                         Source="orginfo.png" 
+                         Clicked="org_Info_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label  Margin="10,0,0,0"
+                            Text="Org Info" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="Users" 
+                         Source="allusers.png" 
+                         Clicked="Users_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                         />
+                        <Label Margin="20,0,0,0"
+                               Text="Users" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="Settings" 
+                         Source="settings.png" 
+                         Clicked="Settings_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Settings" Margin="15,0,0,0"
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <ImageButton x:Name="Subscriptions" 
+                         Source="subscriptions.png" 
+                         Clicked="Subscriptions_Clicked"
+                         HeightRequest="70"
+                         WidthRequest="70"
+                        
+                         />
+                        <Label Text="Subscriptions" 
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource ifontsize}"/>
+                    </VerticalStackLayout>
+                </FlexLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+    </Grid>
+   
+    
+</ContentPage>

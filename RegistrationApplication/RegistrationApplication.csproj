@@ -1,0 +1,122 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>RegistrationApplication</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>RegistrationApplication</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.registrationapplication</ApplicationId>
+		<ApplicationIdGuid>389be674-751d-4c01-be2d-04075ef12a8e</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\TangoSans.ttf" />
+	  <None Remove="Resources\Fonts\TangoSans_Bold.ttf" />
+	  <None Remove="Resources\Images\accounts.png" />
+	  <None Remove="Resources\Images\allusers.png" />
+	  <None Remove="Resources\Images\balance_sheet.png" />
+	  <None Remove="Resources\Images\bills.png" />
+	  <None Remove="Resources\Images\chartaccounts.png" />
+	  <None Remove="Resources\Images\contacts.png" />
+	  <None Remove="Resources\Images\crm.png" />
+	  <None Remove="Resources\Images\crmimage.png" />
+	  <None Remove="Resources\Images\debitnotes.png" />
+	  <None Remove="Resources\Images\deposits.png" />
+	  <None Remove="Resources\Images\document_designer.png" />
+	  <None Remove="Resources\Images\document_scanner.png" />
+	  <None Remove="Resources\Images\eleave.png" />
+	  <None Remove="Resources\Images\expenses.png" />
+	  <None Remove="Resources\Images\ezpenseclaim.png" />
+	  <None Remove="Resources\Images\fixed_assets.png" />
+	  <None Remove="Resources\Images\invoices.png" />
+	  <None Remove="Resources\Images\journalentries.png" />
+	  <None Remove="Resources\Images\openbalance.png" />
+	  <None Remove="Resources\Images\orginfo.png" />
+	  <None Remove="Resources\Images\payroll.png" />
+	  <None Remove="Resources\Images\pick.png" />
+	  <None Remove="Resources\Images\products.png" />
+	  <None Remove="Resources\Images\profitandloss.png" />
+	  <None Remove="Resources\Images\purchase_orders.png" />
+	  <None Remove="Resources\Images\quotation.png" />
+	  <None Remove="Resources\Images\settings.png" />
+	  <None Remove="Resources\Images\shipment_tracking.png" />
+	  <None Remove="Resources\Images\stock_management.png" />
+	  <None Remove="Resources\Images\subscriptions.png" />
+	  <None Remove="Resources\Images\trial_balance.png" />
+	  <None Remove="Resources\Images\users.png" />
+	  <None Remove="Resources\Images\warehouse.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="22.2.10" />
+		<PackageReference Include="Syncfusion.Maui.ListView" Version="22.2.10" />
+		<PackageReference Include="Syncfusion.Maui.TabView" Version="22.2.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Pages\CreateInvoicePage.xaml.cs">
+	    <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\CreateInvoicePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\InvoiceListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\Controls\" />
+	</ItemGroup>
+
+</Project>
